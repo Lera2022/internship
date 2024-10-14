@@ -1,0 +1,9 @@
+$ npm create vue@latest // Чтобы начать работу с Vite + Vue
+
+$ cd <your-project-name>
+$ npm install
+$ npm run dev
+
+$ npm run build
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
