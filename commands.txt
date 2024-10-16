@@ -7,3 +7,19 @@ $ npm run dev
 $ npm run build
 
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+tsc --target es2015 hello.ts
+tsc hello.ts
+tsc --noEmitOnError hello.ts
+npm install -g typescript
+
+npm init quasar
+$ npm i -g @quasar/cli
+
+$ cd <project_folder_name>
+# then run:
+
+# if you have the global CLI:
+$ quasar dev
+# otherwise:
+$ yarn quasar dev # or: npx quasar dev

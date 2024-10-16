@@ -1,0 +1,141 @@
+для Windows:
+
+$ cd C:/Users/user/my_project
+а затем выполните команду:
+
+$ git init
+
+$ git add *.c
+$ git add LICENSE
+$ git commit -m 'Initial project version'
+
+$ git clone https://github.com/libgit2/libgit2
+
+$ git clone https://github.com/libgit2/libgit2 mylibgit
+
+$ git status
+
+$ echo 'My Project' > README
+$ git status
+
+$ git add README
+
+$ git status -s
+
+$ cat .gitignore
+*.[oa]
+*~
+
+
+# Исключить все файлы с расширением .a
+*.a
+
+# Но отслеживать файл lib.a даже если он подпадает под исключение выше
+!lib.a
+
+# Исключить файл TODO в корневом каталоге, но не файл в subdir/TODO
+/TODO
+
+# Игнорировать все файлы в каталоге build/
+build/
+
+# Игнорировать файл doc/notes.txt, но не файл doc/server/arch.txt
+doc/*.txt
+
+# Игнорировать все .txt файлы в каталоге doc/
+doc/**/*.txt
+
+$ git diff
+
+$ git diff --staged
+
+git diff --cached для просмотра проиндексированных изменений (--staged и --cached синонимы):
+
+git difftool
+git difftool --tool-help
+
+git commit
+
+$ git commit -m "Story 182: fix benchmarks for speed"
+
+$ git commit -a -m 'Add new benchmarks'  автоматически индексировать каждый уже отслеживаемый на момент коммита файл,
+                                            позволяя вам обойтись без git add
+
+$ git rm PROJECTS.md
+
+$ git rm --cached README  удалить файл из индекса, оставив его при этом в рабочем каталоге
+
+$ git mv file_from file_to
+
+$ git log
+
+$ git log -p -2 или --patch, который показывает разницу (выводит патч), внесённую в каждый коммит
+
+$ git log --stat сокращённую статистику для каждого коммита
+
+$ git log --pretty=oneline  выводит каждый коммит в одну строку, что может быть очень удобным если вы просматриваете
+                            большое количество коммитов. К тому же, опции short, full и fuller делают вывод
+                            приблизительно в том же формате, но с меньшим или большим количеством информации
+
+$ git log --pretty=format:"%h - %an, %ar : %s"
+
+$ git log --since=2.weeks
+
+$ git log -S function_name  принимает аргумент в виде строки и показывает только те коммиты, в которых изменение в коде
+                            повлекло за собой добавление или удаление этой строки
+
+$ git log -- path/to/file
+
+$ git commit --amend    внесите необходимые изменения, добавьте их в индекс и сделайте коммит ещё раз, указав параметр
+                        --amend
+
+$ git reset HEAD CONTRIBUTING.md     отменим индексирование файла CONTRIBUTING.md
+
+$ git checkout -- CONTRIBUTING.md   отменить изменения в нём - вернуть к тому состоянию, которое было в последнем коммите
+
+$ git restore --staged CONTRIBUTING.md  для отмены индексации файла
+
+$ git restore CONTRIBUTING.md    не хотите сохранять изменения в файле
+
+git remote      названия доступных удалённых репозиториев
+
+$ git remote -v     адреса для чтения и записи, привязанные к репозиторию:
+
+$ git remote add pb https://github.com/paulboone/ticgit   добавить удалённый репозиторий и присвоить ему имя (shortname)
+
+$ git fetch [remote-name]   связывается с указанным удалённым проектом и забирает все те данные проекта, которых у вас ещё нет
+
+git pull чтобы автоматически получить изменения из удалённой ветки и слить их со своей текущей
+
+git push <remote-name> <branch-name>    $ git push origin master
+
+$ git remote show origin
+
+$ git remote rename pb paul  переименование удалённых репозиториев
+
+$ git remote remove paul     удалить удалённый репозиторий
+
+$ git tag   Просмотр списка тегов (параметры -l и --list опциональны)
+
+$ git tag -a v1.4 -m "my version 1.4"   Создание аннотированного тега
+
+$ git show v1.4 посмотреть данные тега вместе с коммитом
+
+$ git tag v1.4-lw   Легковесный тег
+
+$ git tag -a v1.2 9fceb02    Для отметки коммита укажите его контрольную сумму (или её часть) как параметр команды
+
+git push origin <tagname>
+
+$ git push origin --tags
+
+git tag -d <tagname>    Для удаления тега в локальном репозитории
+
+git push <remote> :refs/tags/<tagname>:     удаления с внешних серверов
+
+настроить псевдонимы (alias) для любой команды
+$ git config --global alias.co checkout
+$ git config --global alias.br branch
+$ git config --global alias.ci commit
+$ git config --global alias.st status
+
