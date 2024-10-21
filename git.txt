@@ -139,3 +139,16 @@ $ git config --global alias.br branch
 $ git config --global alias.ci commit
 $ git config --global alias.st status
 
+$ git branch testing
+$ git log --oneline --decorate
+$ git checkout testing
+$ git log --oneline --decorate --graph --all
+git checkout -b <newbranchname>
+$ git checkout master
+$ git merge newbranchname
+$ git branch -d newbranchname
+
+$ git branch --move bad-branch-name corrected-branch-name
+$ git push --set-upstream origin corrected-branch-name
+$ git push origin --delete bad-branch-name
+

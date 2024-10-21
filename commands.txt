@@ -23,3 +23,7 @@ $ cd <project_folder_name>
 $ quasar dev
 # otherwise:
 $ yarn quasar dev # or: npx quasar dev
+
+$ npm install axios
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
