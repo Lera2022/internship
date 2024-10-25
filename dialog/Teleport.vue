@@ -6,3 +6,14 @@
   <button @click="open = false">Закрыть</button>
 </div>
 </Teleport>
+
+<Teleport :disabled="isMobile">
+...
+</Teleport>
+
+<Teleport to="#modals">
+<div>А</div>
+</Teleport>
+<Teleport to="#modals">
+<div>Б</div>
+</Teleport>
